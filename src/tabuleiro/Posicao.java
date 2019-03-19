@@ -30,6 +30,5 @@ public class Posicao {
 	public String toString() {
 		return fileira + ", " + coluna;
 	}
-	
 
 }
