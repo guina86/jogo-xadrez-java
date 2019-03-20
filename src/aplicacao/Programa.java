@@ -16,7 +16,6 @@ public class Programa {
 		
 		PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
 		
-		
 		while(true) {
 			
 			try {
@@ -25,6 +24,10 @@ public class Programa {
 				System.out.println();
 				System.out.print("Origem: ");
 				PosicaoDeXadrez origem = Interface.leiaPosicaoXadrez(sc);
+				boolean[][] movimentosPossiveis = partidaDeXadrez.movimentosPossiveis(origem);
+				Interface.limpaTela();
+				Interface.desenhaTabuleiro(partidaDeXadrez.getPecas(), movimentosPossiveis);
+				System.out.println();
 				System.out.print("Destino: ");
 				PosicaoDeXadrez destino = Interface.leiaPosicaoXadrez(sc);
 				PecaDeXadrez pecaCapturada = partidaDeXadrez.movePeca(origem, destino);
