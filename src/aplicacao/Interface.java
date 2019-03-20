@@ -30,7 +30,12 @@ public class Interface {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 
-	public static PosicaoDeXadrez leiaPosicaoXadrez (Scanner sc) {
+	public static void limpaTela() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}
+
+	public static PosicaoDeXadrez leiaPosicaoXadrez(Scanner sc) {
 		try {
 			String s = sc.nextLine();
 			char coluna = s.charAt(0);
@@ -40,7 +45,7 @@ public class Interface {
 			throw new InputMismatchException("Erro lendo posicao de Xadrez. Valores validos sao de a1 ate h8");
 		}
 	}
-	
+
 	public static void desenhaTabuleiro(PecaDeXadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((8 - i) + " ");
@@ -49,7 +54,7 @@ public class Interface {
 			}
 			System.out.println();
 		}
-		System.out.print("  a b c d e f g h");
+		System.out.println("  a b c d e f g h");
 	}
 
 	private static void desenhaPeca(PecaDeXadrez peca) {
