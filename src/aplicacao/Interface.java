@@ -56,9 +56,14 @@ public class Interface {
 		desenhaPecasCapturadas(capturadas);
 		System.out.println();
 		System.out.println("Turno : " + partidaDeXadrez.getTurno());
-		System.out.println("Esperando pelo jogador: " + partidaDeXadrez.getJogadorAtual());
-		if(partidaDeXadrez.getXeque()) {
-			System.out.println("XEQUE!");
+		if(!partidaDeXadrez.getXequeMate()) {
+			System.out.println("Esperando pelo jogador: " + partidaDeXadrez.getJogadorAtual());
+			if(partidaDeXadrez.getXeque()) {
+				System.out.println("XEQUE!");
+			}
+		} else {
+			System.out.println("XEQUE-MATE!");
+			System.out.println("Vencedor: " + partidaDeXadrez.getJogadorAtual());
 		}
 	}
 	
