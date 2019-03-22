@@ -13,14 +13,14 @@ import xadrez.PosicaoDeXadrez;
 public class Programa {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
 		List<PecaDeXadrez> capturadas = new ArrayList<>();
-		
-		while(!partidaDeXadrez.getXequeMate()) {
-			
+
+		while (!partidaDeXadrez.getXequeMate()) {
+
 			try {
 				Interface.limpaTela();
 				Interface.desenhaPartida(partidaDeXadrez, capturadas);
@@ -37,6 +37,13 @@ public class Programa {
 				if (pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
 				}
+
+				if (partidaDeXadrez.getPromovido() != null) {
+					System.out.print("Digite a peca para promocao (B/C/T/Q): ");
+					String tipo = sc.nextLine();
+					partidaDeXadrez.trocaPecaPromovida(tipo);
+				}
+
 			} catch (ExcecaoDeXadrez e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
@@ -44,7 +51,7 @@ public class Programa {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
-			
+
 		}
 		Interface.limpaTela();
 		Interface.desenhaPartida(partidaDeXadrez, capturadas);

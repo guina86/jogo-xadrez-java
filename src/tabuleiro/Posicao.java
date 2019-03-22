@@ -1,10 +1,10 @@
 package tabuleiro;
 
 public class Posicao {
-	
+
 	private int fileira;
 	private int coluna;
-	
+
 	public Posicao(int fileira, int coluna) {
 		this.fileira = fileira;
 		this.coluna = coluna;
@@ -25,12 +25,12 @@ public class Posicao {
 	public void setColuna(int coluna) {
 		this.coluna = coluna;
 	}
-	
-	public void setValores ( int fileira, int coluna) {
+
+	public void setValores(int fileira, int coluna) {
 		this.fileira = fileira;
 		this.coluna = coluna;
 	}
-	
+
 	@Override
 	public String toString() {
 		return fileira + ", " + coluna;

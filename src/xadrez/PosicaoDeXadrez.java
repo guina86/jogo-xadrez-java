@@ -23,17 +23,17 @@ public class PosicaoDeXadrez {
 		return fileira;
 	}
 
-	protected Posicao toPosicao () {
+	protected Posicao toPosicao() {
 		return new Posicao(8 - fileira, coluna - 'a');
 	}
-	
+
 	protected static PosicaoDeXadrez daPosicao(Posicao posicao) {
-		return new PosicaoDeXadrez((char)('a' + posicao.getColuna()), 8 - posicao.getFileira() );
+		return new PosicaoDeXadrez((char) ('a' + posicao.getColuna()), 8 - posicao.getFileira());
 	}
-	
+
 	@Override
 	public String toString() {
 		return "" + coluna + fileira;
 	}
-	
+
 }
